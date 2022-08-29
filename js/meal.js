@@ -16,12 +16,11 @@ const displayMeal = meals => {
         <div class="card-body">
           <h5 class="card-title">${meal.strMeal}</h5>
           <p class="card-text">${meal.strInstructions.slice(0, 200)}</p>
-        </div>
-        
-        <!-- Button trigger modal -->
-            <button type="button" onclick="modalOpen(${meal.idMeal})" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <!-- Button trigger modal -->
+            <button type="button" onclick="modalOpen(${meal.idMeal})" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Launch demo modal
             </button>
+        </div>
       </div>
         `
         cardGroup.appendChild(div);
