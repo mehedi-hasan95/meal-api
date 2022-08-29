@@ -45,21 +45,19 @@ const modalOpen = modals => {
 }
 
 const displayModal = openModal => {
+    console.log( openModal );
     const exploreModal = document.getElementById('explore-modal');
-    exploreModal.innerHTML = '';
-    openModal.forEach(modal => {
-        const div = document.createElement('div');
-        div.innerHTML = `
+        exploreModal.innerHTML = `
         <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">${modal.strMeal}</h5>
+        <h5 class="modal-title" id="exampleModalLabel">${openModal[0].strMeal}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <div class="card">
-            <img src="${modal.strMealThumb}" class="card-img-top" alt="...">
+            <img src="${openModal[0].strMealThumb}" class="card-img-top" alt="...">
             <div class="card-body">
-            <h5 class="card-title">${modal.strIngredient1}</h5>
-            <p class="card-text">${modal.strInstructions}</p>
+            <h5 class="card-title">Food type: ${openModal[0].strCategory}</h5>
+            <p class="card-text"><span class="fs-4">About Food:</span> ${openModal[0].strInstructions}</p>
             </div>
         </div>
         </div>
@@ -67,8 +65,6 @@ const displayModal = openModal => {
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
         `
-        exploreModal.append(div);
-    });
 }
 
 loadMeal('fish');
